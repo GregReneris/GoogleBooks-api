@@ -1,4 +1,5 @@
 const dbBook = require("../models/googlebooks")
+const ObjectId = require('mongodb').ObjectID;
 
 
 
@@ -30,8 +31,12 @@ function getBooks (req,res){
 }
 
 function deleteBook (req,res){
-    dbBook.delete({_id : req.body._id}, function (err) {
+    console.log(req.params.id)
+
+    dbBook.deleteOne({_id : ObjectId(req.params.id)}, function (err) {
         if (err) return (err);
+        console.log("sending result.")
+        res.sendStatus(200);
     })
 }
 
