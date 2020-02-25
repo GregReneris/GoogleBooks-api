@@ -35,8 +35,9 @@ app.get("/api/books", (req, res) => {
 });
 
 
-app.delete("/api/books", (req,res) => {
-  // console.log(req)
+app.delete("/api/book/:id", (req,res) => {
+  console.log("got to delete book!")
+  googleController.deleteBook(req, res)
 });
 
 

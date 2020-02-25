@@ -7,14 +7,12 @@ const googleBooksSchema = new Schema(
     {
         title: String,
         authors: [{type: String, required: true}],
-        description: String,
-        image: String,
+        desc: String,
+        img: String,
         link: String
         
     }
 );
-
-
 
 
 module.exports = mongoose.model("googlebooks", googleBooksSchema);

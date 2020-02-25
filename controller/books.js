@@ -29,8 +29,11 @@ function getBooks (req,res){
     } )
 }
 
-
-
+function deleteBook (req,res){
+    dbBook.delete({_id : req.body._id}, function (err) {
+        if (err) return (err);
+    })
+}
 
 
 
@@ -40,7 +43,7 @@ function getBooks (req,res){
 
 module.exports = {
     saveBook,
-    // deleteBook,
+    deleteBook,
     getBooks
 
 }
